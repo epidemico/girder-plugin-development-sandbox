@@ -28,5 +28,7 @@ The virtual machine will automatically be watching for changes to your plugin
 direcotry on provisioning, but if you need to manage the Grunt watch task:
 
     vagrant ssh
+    sudo su
     watch_kill      # kills any Grunt watches
     watch_start     # restarts the Grunt watch
+    watch_log       # tail the Grunt watch logs, useful for debugging

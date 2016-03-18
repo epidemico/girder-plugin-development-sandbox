@@ -19,7 +19,9 @@ npm install -g grunt-cli
 npm install
 npm run postinstall
 alias watch_start="cd $GIRDER_FOLDER; grunt watch >> /tmp/grunt-watch-log &"
-alias watch_end="ps aux | grep grunt | grep -v grep | awk '{print \$2}' | xargs kill"
+alias watch_kill="ps aux | grep grunt | grep -v grep | awk '{print \$2}' | xargs kill"
+alias watch_log="tail -f /tmp/grunt-watch-log"
+alias | grep watch_ >> /root/.profile
 watch_start
 pip install girder-client
 girder-server >> /tmp/girder-server-log &
