@@ -13,10 +13,13 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 apt-get install -y nodejs
 pip install girder
 girder-install web
-cd /usr/local/lib/python2.7/dist-packages/girder
+GIRDER_FOLDER="/usr/local/lib/python2.7/dist-packages/girder"
+cd $GIRDER_FOLDER
 npm install -g grunt-cli
 npm install
 npm run postinstall
-grunt watch >> /tmp/grunt-watch-log &
+alias watch_start="cd $GIRDER_FOLDER; grunt watch >> /tmp/grunt-watch-log &"
+alias watch_end="ps aux | grep grunt | grep -v grep | awk '{print \$2}' | xargs kill"
+watch_start
 pip install girder-client
 girder-server >> /tmp/girder-server-log &
