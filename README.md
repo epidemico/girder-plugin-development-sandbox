@@ -32,3 +32,13 @@ direcotry on provisioning, but if you need to manage the Grunt watch task:
     watch_kill      # kills any Grunt watches
     watch_start     # restarts the Grunt watch
     watch_log       # tail the Grunt watch logs, useful for debugging
+
+## Virtual Machine restarts
+
+As you halt/restart the virtual machine, you may need to restart the 
+Girder server and watch commands upon subsequent calls on `vagrant up`:
+
+    vagrant ssh
+    sudo su
+    watch_start     # restarts the Grunt watch
+    python -m girder# restarts the Girder server
