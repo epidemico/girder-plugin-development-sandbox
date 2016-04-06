@@ -19,10 +19,10 @@ npm install -g grunt-cli
 npm install
 npm run postinstall
 alias watch_start="cd $GIRDER_FOLDER; grunt watch >> /tmp/grunt-watch-log &"
-alias watch_kill="ps aux | grep grunt | grep -v grep | awk '{print \$2}' | xargs kill"
+alias watch_kill="ps aux | grep grunt | grep -v grep | awk '{print \$2}' | xargs kill -9"
 alias watch_log="tail -f /tmp/grunt-watch-log"
 alias girder_start="cd $GIRDER_FOLDER; python -m girder >> /tmp/girder-server-log &"
-alias girder_kill="ps aux | grep girder | grep -v grep | awk '{print \$2}' | xargs kill"
+alias girder_kill="ps aux | grep girder | grep -v grep | awk '{print \$2}' | xargs kill -9"
 alias girder_log="tail -f /tmp/girder-server-log"
 alias girder_error_log="tail -f /root/.girder/logs/error.log"
 alias girder_lint_watch="cd $GIRDER_FOLDER; watch 'node_modules/eslint/bin/eslint.js -c .eslintrc plugins'"
