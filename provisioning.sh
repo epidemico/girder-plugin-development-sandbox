@@ -26,7 +26,7 @@ alias girder_kill="ps aux | grep girder | grep -v grep | awk '{print \$2}' | xar
 alias girder_log="tail -f /tmp/girder-server-log"
 alias girder_error_log="tail -f /root/.girder/logs/error.log"
 alias girder_lint_watch="cd $GIRDER_FOLDER; watch 'node_modules/eslint/bin/eslint.js -c .eslintrc plugins'"
-alias | grep watch_ >> /root/.bash_aliases
+alias | grep -E 'watch_|girder' >> /root/.bash_aliases
 watch_start
 pip install girder-client
 girder_start
